@@ -4,4 +4,4 @@ Build instructions taken from http://mikeos.sourceforge.net/write-your-own-os.ht
 1. nasm -f bin -o os.bin kernel.asm
 2. dd status=noxfer conv=notrunc if=os.bin of=os.flp
 3. qemu-system-i386 -fda os.flp
-4. mkisofs -o OpenOS.iso -b os.flp cdiso/
+4. mkisofs -no-emul-boot -boot-load-size 4 -o OpenOS.iso -b os.flp cdiso/
